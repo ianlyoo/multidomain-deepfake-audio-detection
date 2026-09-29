@@ -1,0 +1,41 @@
+{
+    "candidate":  "sub102r3",
+    "checkpoint":  "r3e12",
+    "overlay_path":  "data/models/nii_ml_sub102_r3e12.safetensors",
+    "pool":  {
+                 "file":  {
+                              "a":  0.42680907029203735,
+                              "b":  -0.6304034896286665,
+                              "bce":  0.23260357578037116,
+                              "eer":  0.09165910542057332,
+                              "gamma":  0.0,
+                              "tau":  4.0
+                          },
+                 "music":  {
+                               "a":  0.3936595595390725,
+                               "b":  -0.13954637928984984,
+                               "bce":  0.2581935873704689,
+                               "eer":  0.10824829800700866,
+                               "gamma":  2.0,
+                               "tau":  1000.0
+                           },
+                 "voice":  {
+                               "a":  0.5648970026469469,
+                               "b":  -1.2910782155102363,
+                               "bce":  0.1504200735493006,
+                               "eer":  0.05787439613526572,
+                               "gamma":  0.0,
+                               "tau":  4.0
+                           }
+             },
+    "selection_path":  "data/derived/mixture_v2/sub102r3_selection.json",
+    "selection_sha256":  "cfe334a843d56b73d663c0e699535b3ea801bbc031b27ed1482ef6b00a480d2e",
+    "source_runner":  "submission/script_sub100.py",
+    "source_sha256":  "0b09af03045b148d987803e56e5474e2ab3d07707783af040b4d7a9fb36e6085",
+    "weights":  {
+                    "file":  0.15,
+                    "music":  0.35,
+                    "voice":  0.1
+                },
+    "weights_sha256":  "6818a0ffbadd1fa66afa1ee882483b247b0963dda208f05ba3117642c9608439"
+}

@@ -1,0 +1,28 @@
+# Data, model, and licence map
+
+No audio, competition files, weights, or test predictions are distributed here. The table describes material used in the campaign or its local panels. Download each source from its publisher, keep the original notices and version, and check the terms for the exact files before use. A dataset card's licence may differ from a track or generated audio file's terms.
+
+| Source and acquisition | Licence / terms to check | Use in this work |
+|---|---|---|
+| [DACON 236749](https://dacon.io/competitions/official/236749/overview/description), download after registration | Competition terms; no redistribution here | Task schema, baseline and hidden evaluation |
+| [In-the-Wild](https://huggingface.co/datasets/mueller91/In-The-Wild), publisher dataset | CC BY-SA 4.0 | Real/fake speech validation and FILE mixture parents |
+| [Echoes](https://huggingface.co/datasets/Octavian97/Echoes), publisher dataset | CC BY-SA 4.0; keep source attribution and share alike on derivatives | Generated music, paired music and mixed FILE panels |
+| [FMA](https://github.com/mdeff/fma), dataset and original track pages | Per-track CC or public domain; some historical tracks carry other licences | Bona fide music, Echoes pairing and mixtures. Review every selected track's licence URL before deriving or distributing it |
+| [SONICS](https://huggingface.co/datasets/awsaf49/sonics), publisher dataset | CC BY-NC 4.0 plus source restrictions and generation-service terms | Synthetic music for music head and mixture training. Noncommercial use was accepted for this campaign; redistribution needs a separate review |
+| [DSD-Corpus](https://zenodo.org/records/13788455), Zenodo record | CC BY-NC 4.0 | Deepfake speech and Korean mixture inputs |
+| [FakeMusicCaps](https://github.com/polimi-ispl/FakeMusicCaps), follow its linked dataset release | Source research notes identify CC BY-NC 4.0 audio; check the exact release. A later [metadata mirror](https://huggingface.co/datasets/DeepFense/FakeMusicCaps) labels its card Apache 2.0, which does not by itself settle the audio rights | Generated music training and diagnostics |
+| [Jamendo API](https://developer.jamendo.com/v3.0/docs), original track links | Each track has its own Creative Commons licence; API terms also apply | Real music for mixture training and later real-domain tuning |
+| [AI-Hub](https://www.aihub.or.kr/), obtain access through the portal | Dataset-specific portal terms; re-sharing is restricted | Korean speech in mixture v3. Acquire directly rather than copying the local training files |
+| [FLEURS](https://huggingface.co/datasets/google/fleurs), publisher dataset | CC BY 4.0 | Korean extra speech probe and real-domain continuation |
+| [Zeroth-Korean](https://www.openslr.org/40/), publisher dataset | CC BY 4.0 | Korean speech and source-matched synthesis probes |
+| [ASVspoof 5](https://doi.org/10.5281/zenodo.14498691), Zenodo | Dataset ODC-By; bona fide speech notices include CC BY 4.0 | Considered for a speech anchor and exposure audit; not in the selected mixture fine-tune |
+| [LlamaPartialSpoof](https://zenodo.org/records/14214149), Zenodo | CC BY 4.0 | Partly edited speech evaluation; source exposure limits apply |
+| [CtrSVDD](https://github.com/SVDDChallenge/CtrSVDD2024_Baseline), organizer release | Dataset described as CC BY-NC-ND 4.0 | Singing voice evaluation metadata and candidate screening |
+| [ACE-KiSing](https://huggingface.co/datasets/espnet/ace-kising-segments), publisher dataset | CC BY-NC 4.0 | Singing voice diagnostics; not a final-model training source |
+| [DynamicSuperb singing collection](https://huggingface.co/datasets/DynamicSuperb/SingingVoiceDeepfakeDetection_CtrSVDD_ACEKiSing_M4Singer), metadata/viewer | Mixed upstream terms, including NC and ND; inspect each source | Acquisition probe only; quarantined from training and scoring |
+
+Other Korean synthesis panel components came from [Chatterbox](https://github.com/resemble-ai/chatterbox) (MIT), [BigVGAN](https://github.com/NVIDIA/BigVGAN) (MIT), [MMS-TTS Korean](https://huggingface.co/facebook/mms-tts-kor) (CC BY-NC 4.0), [XTTS-v2](https://huggingface.co/coqui/XTTS-v2) (CPML), and exploratory OmniVoice, Qwen, Vocos and Supertonic variants with their own NC, Apache, MIT or model-specific terms. These variants were used in later research and some real-domain continuation runs; acquire each model directly from its publisher and check its version and terms before rebuilding them. The public repository provides no derivative audio from them.
+
+The final inference stack also depends on external pretrained components: [DF-Arena](https://huggingface.co/Speech-Arena-2025/DF_Arena_1B_V_1), [HTDemucs](https://github.com/facebookresearch/demucs), [PANNs](https://github.com/qiuqiangkong/audioset_tagging_cnn), [ArtifactNet](https://huggingface.co/intrect/artifactnet), [Spectra-AASIST3](https://huggingface.co/lab260/Spectra-AASIST3), [NII AntiDeepfake](https://huggingface.co/nii-yamagishilab/wav2vec-large-anti-deepfake), [Eliya Forensics](https://huggingface.co/eliya/forensics_0.3B_base_deepfake_classifier), and [lofcz AI music detector](https://huggingface.co/lofcz/ai-music-detector). Their model cards and weight licences govern downloads and deployment separately from this repository's MIT licence. The code also records unsuccessful research adapters; inclusion in `src/` does not imply the final runner loads every one.
+
+For derived mixtures, preserve a local manifest of parent URL, exact licence, original checksum, transformation, group, and split. Speaker, song, and source grouping matters for validation. The public repository intentionally contains no source identifiers from hidden competition data.

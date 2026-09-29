@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deepvoicehackathon"
+version = "0.1.0"
+description = "Reproducible experimentation and submission tooling for DACON 236749"
+requires-python = "==3.11.*"
+dependencies = [
+  "numpy==1.26.4",
+  "pandas==2.0.3",
+  "scikit-learn==1.8.0",
+  "scipy==1.15.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==8.4.1"]
+inference = [
+  "accelerate==1.9.0",
+  "demucs==4.0.1",
+  "diffq==0.2.4",
+  "einops==0.8.1",
+  "huggingface-hub==0.34.4",
+  "julius==0.2.7",
+  "librosa==0.10.2.post1",
+  "loguru==0.7.2",
+  "matplotlib==3.10.8",
+  "panns-inference==0.1.1",
+  "psutil==7.2.2",
+  "pyyaml==6.0.1",
+  "rich==13.7.1",
+  "safetensors==0.6.2",
+  "sentencepiece==0.1.99",
+  "soundfile==0.12.1",
+  "soxr==0.5.0.post1",
+  "torchlibrosa==0.1.0",
+  "tqdm==4.66.4",
+  "transformers==4.57.6",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
